@@ -13,7 +13,10 @@
   "organization",
   "source",
   "status",
-  "description"
+  "description",
+  "assigned_to",
+  "follow_up_date",
+  "next_action"
  ],
  "fields": [
   {
@@ -61,12 +64,30 @@
    "label": "Status",
    "options": "New\nContacted\nQualified\nLost\nConverted",
    "reqd": 1
+  },
+  {
+   "fieldname": "assigned_to",
+   "fieldtype": "Link",
+   "label": "Assigned To",
+   "options": "User",
+   "reqd": 1
+  },
+  {
+   "fieldname": "follow_up_date",
+   "fieldtype": "Date",
+   "label": "Follow Up Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "next_action",
+   "fieldtype": "Small Text",
+   "label": "Next Action"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-08-25 15:47:02.658110",
+ "modified": "2026-08-25 17:10:16.579105",
  "modified_by": "Administrator",
  "module": "CRM",
  "name": "Lead",
