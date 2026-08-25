@@ -2,23 +2,21 @@
  "actions": [],
  "allow_bulk_edit": 1,
  "allow_rename": 1,
- "autoname": "OPP-.####",
+ "autoname": "OPPTY-.####",
  "creation": "2026-08-25 16:41:46.252007",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "opportunity_details_section",
-  "opportunity_name",
   "lead",
+  "opportunity_name",
   "customer_organization",
-  "contact",
-  "sales_information_section",
-  "expected_value",
-  "probability",
-  "sales_stage",
+  "opportunity_value",
   "expected_closing_date",
-  "next_action",
-  "requested_items"
+  "stage",
+  "probability",
+  "description",
+  "notes"
  ],
  "fields": [
   {
@@ -36,28 +34,17 @@
   {
    "fieldname": "lead",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Lead",
-   "options": "Lead"
+   "options": "Lead",
+   "reqd": 1
   },
   {
    "fieldname": "customer_organization",
    "fieldtype": "Data",
-   "label": "Customer / Organization"
-  },
-  {
-   "fieldname": "contact",
-   "fieldtype": "Data",
-   "label": "Contact"
-  },
-  {
-   "fieldname": "sales_information_section",
-   "fieldtype": "Section Break",
-   "label": "Sales Information"
-  },
-  {
-   "fieldname": "expected_value",
-   "fieldtype": "Currency",
-   "label": "Expected Value"
+   "in_list_view": 1,
+   "label": "Organization",
+   "reqd": 1
   },
   {
    "fieldname": "probability",
@@ -65,31 +52,42 @@
    "label": "Probability"
   },
   {
-   "fieldname": "sales_stage",
-   "fieldtype": "Select",
-   "label": "Sales Stage",
-   "options": "Qualification\nNeeds Analysis\nProposal\nNegotiation\nClosed Won\nClosed Lost"
-  },
-  {
    "fieldname": "expected_closing_date",
    "fieldtype": "Date",
-   "label": "Expected Closing Date"
+   "in_list_view": 1,
+   "label": "Expected Closing Date",
+   "reqd": 1
   },
   {
-   "fieldname": "next_action",
-   "fieldtype": "Small Text",
-   "label": "Next Action"
+   "fieldname": "opportunity_value",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Opportunity Value",
+   "reqd": 1
   },
   {
-   "fieldname": "requested_items",
+   "fieldname": "stage",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Stage",
+   "options": "New\nQualification\nProposal\nNegotiation\nWon\nLost",
+   "reqd": 1
+  },
+  {
+   "fieldname": "description",
    "fieldtype": "Small Text",
-   "label": "Requested Items"
+   "label": "Description"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Notes"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-08-25 16:51:49.997135",
+ "modified": "2026-08-25 18:11:40.894655",
  "modified_by": "Administrator",
  "module": "CRM",
  "name": "Opportunity",
@@ -109,6 +107,7 @@
    "write": 1
   }
  ],
+ "quick_entry": 1,
  "row_format": "Dynamic",
  "rows_threshold_for_grid_search": 20,
  "sort_field": "creation",
