@@ -53,8 +53,9 @@
   },
   {
    "fieldname": "opportunity",
-   "fieldtype": "Data",
-   "label": "Opportunity"
+   "fieldtype": "Link",
+   "label": "Opportunity",
+   "options": "Opportunity"
   },
   {
    "fieldname": "items",
@@ -88,7 +89,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-08-25 15:53:40.452446",
+ "modified": "2026-08-25 17:33:22.469551",
  "modified_by": "Administrator",
  "module": "CRM",
  "name": "Quotation",
