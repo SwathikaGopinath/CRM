@@ -2,7 +2,7 @@
  "actions": [],
  "allow_bulk_edit": 1,
  "allow_rename": 1,
- "autoname": "LEAD-.#####",
+ "autoname": "LEAD-.####",
  "creation": "2026-08-25 14:46:02.320003",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -12,6 +12,7 @@
   "phone",
   "organization",
   "source",
+  "status",
   "description"
  ],
  "fields": [
@@ -25,21 +26,25 @@
   {
    "fieldname": "email",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Email"
   },
   {
    "fieldname": "phone",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Phone"
   },
   {
    "fieldname": "organization",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Organization"
   },
   {
    "fieldname": "source",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Source",
    "options": "Lead Source"
   },
@@ -47,12 +52,21 @@
    "fieldname": "description",
    "fieldtype": "Small Text",
    "label": "Description"
+  },
+  {
+   "default": "New",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "New\nContacted\nQualified\nLost\nConverted",
+   "reqd": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-08-25 15:03:19.601193",
+ "modified": "2026-08-25 15:47:02.658110",
  "modified_by": "Administrator",
  "module": "CRM",
  "name": "Lead",
@@ -72,9 +86,11 @@
    "write": 1
   }
  ],
+ "quick_entry": 1,
  "row_format": "Dynamic",
  "rows_threshold_for_grid_search": 20,
  "sort_field": "creation",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "track_changes": 1
 }
