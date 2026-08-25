@@ -1,0 +1,117 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "autoname": "OPP-.####",
+ "creation": "2026-08-25 16:41:46.252007",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "opportunity_details_section",
+  "opportunity_name",
+  "lead",
+  "customer_organization",
+  "contact",
+  "sales_information_section",
+  "expected_value",
+  "probability",
+  "sales_stage",
+  "expected_closing_date",
+  "next_action",
+  "requested_items"
+ ],
+ "fields": [
+  {
+   "fieldname": "opportunity_details_section",
+   "fieldtype": "Section Break",
+   "label": "Opportunity Details"
+  },
+  {
+   "fieldname": "opportunity_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Opportunity Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "lead",
+   "fieldtype": "Link",
+   "label": "Lead",
+   "options": "Lead"
+  },
+  {
+   "fieldname": "customer_organization",
+   "fieldtype": "Data",
+   "label": "Customer / Organization"
+  },
+  {
+   "fieldname": "contact",
+   "fieldtype": "Data",
+   "label": "Contact"
+  },
+  {
+   "fieldname": "sales_information_section",
+   "fieldtype": "Section Break",
+   "label": "Sales Information"
+  },
+  {
+   "fieldname": "expected_value",
+   "fieldtype": "Currency",
+   "label": "Expected Value"
+  },
+  {
+   "fieldname": "probability",
+   "fieldtype": "Percent",
+   "label": "Probability"
+  },
+  {
+   "fieldname": "sales_stage",
+   "fieldtype": "Select",
+   "label": "Sales Stage",
+   "options": "Qualification\nNeeds Analysis\nProposal\nNegotiation\nClosed Won\nClosed Lost"
+  },
+  {
+   "fieldname": "expected_closing_date",
+   "fieldtype": "Date",
+   "label": "Expected Closing Date"
+  },
+  {
+   "fieldname": "next_action",
+   "fieldtype": "Small Text",
+   "label": "Next Action"
+  },
+  {
+   "fieldname": "requested_items",
+   "fieldtype": "Small Text",
+   "label": "Requested Items"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-08-25 16:51:49.997135",
+ "modified_by": "Administrator",
+ "module": "CRM",
+ "name": "Opportunity",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}
