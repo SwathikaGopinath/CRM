@@ -1,0 +1,13 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Follow Up",
+  "enabled": 1,
+  "modified": "2026-08-25 17:23:42.183350",
+  "module": null,
+  "name": "Follow Up Script",
+  "script": "frappe.ui.form.on(\"Follow Up\", {\r\n    refresh(frm) {\r\n        check_follow_up_status(frm);\r\n    },\r\n\r\n    follow_up_date(frm) {\r\n        check_follow_up_status(frm);\r\n    },\r\n\r\n    status(frm) {\r\n        check_follow_up_status(frm);\r\n    },\r\n\r\n    validate(frm) {\r\n        if (frm.doc.status === \"Pending\" && !frm.doc.follow_up_date) {\r\n            frappe.throw(__(\"Follow Up Date is required for a Pending follow-up.\"));\r\n        }\r\n\r\n        if (frm.doc.status === \"Completed\" && !frm.doc.notes) {\r\n            frappe.throw(__(\"Please add Notes before completing the follow-up.\"));\r\n        }\r\n    }\r\n});\r\n\r\nfunction check_follow_up_status(frm) {\r\n    if (!frm.doc.follow_up_date) {\r\n        return;\r\n    }\r\n\r\n    if (frm.doc.status === \"Completed\") {\r\n        return;\r\n    }\r\n\r\n    const today = frappe.datetime.get_today();\r\n\r\n    if (frm.doc.follow_up_date < today) {\r\n        frappe.msgprint({\r\n            title: __(\"Overdue Follow-up\"),\r\n            message: __(\r\n                \"This follow-up is overdue. Please complete it or update the follow-up date.\"\r\n            ),\r\n            indicator: \"red\"\r\n        });\r\n    } else if (frm.doc.follow_up_date === today) {\r\n        frappe.msgprint({\r\n            title: __(\"Follow-up Due Today\"),\r\n            message: __(\"This follow-up is due today.\"),\r\n            indicator: \"orange\"\r\n        });\r\n    }\r\n}",
+  "view": "Form"
+ }
+]
