@@ -23,14 +23,7 @@ fixtures = [{"dt": "Client Script", "filters": [["name", "=", "Opportunity Clien
 
 # Includes in <head>
 # ------------------
-fixtures = [
-    {
-        "dt": "Client Script",
-        "filters": [
-            ["name", "=", "Follow Up Script"]
-        ]
-    }
-]
+fixtures = [{"dt": "Client Script", "filters": [["name", "=", "Follow Up Script"]]}]
 
 # include js, css files in header of desk.html
 # app_include_css = "/assets/crm/css/crm.css"
