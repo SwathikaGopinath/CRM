@@ -7,14 +7,7 @@ app_license = "mit"
 
 # Apps
 # ------------------
-fixtures = [
-    {
-        "dt": "Client Script",
-        "filters": [
-            ["name", "=", "Opportunity Client Script"]
-        ]
-    }
-]
+fixtures = [{"dt": "Client Script", "filters": [["name", "=", "Opportunity Client Script"]]}]
 # required_apps = []
 
 # Each item in the list will be shown as an app in the apps page
