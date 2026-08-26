@@ -7,6 +7,7 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "lead",
   "lead_name",
   "email",
   "phone",
@@ -24,6 +25,7 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Lead Name",
+   "options": "Customer",
    "reqd": 1
   },
   {
@@ -82,12 +84,16 @@
    "fieldname": "next_action",
    "fieldtype": "Small Text",
    "label": "Next Action"
+  },
+  {
+   "fieldname": "lead",
+   "fieldtype": "Section Break"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-08-25 17:10:16.579105",
+ "modified": "2026-08-26 12:40:00.600518",
  "modified_by": "Administrator",
  "module": "CRM",
  "name": "Lead",
@@ -113,5 +119,6 @@
  "sort_field": "creation",
  "sort_order": "DESC",
  "states": [],
+ "title_field": "lead_name",
  "track_changes": 1
 }
