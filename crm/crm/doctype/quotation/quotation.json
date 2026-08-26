@@ -2,20 +2,21 @@
  "actions": [],
  "allow_bulk_edit": 1,
  "allow_rename": 1,
+ "autoname": "naming_series:",
  "creation": "2026-08-25 15:45:30.339803",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "quotation_section",
+  "naming_series",
+  "opportunity",
   "quotation_date",
   "valid_until",
   "customer",
-  "contact",
-  "opportunity",
-  "items",
-  "total_amount",
   "status",
-  "acceptance_date",
+  "items",
+  "tax",
+  "total_amount",
   "rejection_reason"
  ],
  "fields": [
@@ -36,24 +37,19 @@
    "fieldname": "valid_until",
    "fieldtype": "Date",
    "in_list_view": 1,
-   "label": "Valid Until",
+   "label": "Valid Till",
    "reqd": 1
   },
   {
    "fieldname": "customer",
    "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Customer",
+   "label": "Contact Person",
    "reqd": 1
-  },
-  {
-   "fieldname": "contact",
-   "fieldtype": "Data",
-   "label": "Contact"
   },
   {
    "fieldname": "opportunity",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Opportunity",
    "options": "Opportunity"
   },
@@ -66,33 +62,42 @@
   {
    "fieldname": "total_amount",
    "fieldtype": "Currency",
-   "label": "Total Amount",
+   "in_list_view": 1,
+   "label": "Grand Total",
    "read_only": 1
   },
   {
    "fieldname": "status",
    "fieldtype": "Select",
+   "in_list_view": 1,
    "label": "Status",
    "options": "Draft\nSent\nAccepted\nRejected\nExpired"
   },
   {
-   "fieldname": "acceptance_date",
-   "fieldtype": "Date",
-   "label": "Acceptance Date"
-  },
-  {
    "fieldname": "rejection_reason",
    "fieldtype": "Small Text",
-   "label": "Rejection Reason"
+   "label": "Notes"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series",
+   "options": "QUOT-.####"
+  },
+  {
+   "fieldname": "tax",
+   "fieldtype": "Currency",
+   "label": "Tax"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-08-25 17:33:22.469551",
+ "modified": "2026-08-26 12:27:48.432101",
  "modified_by": "Administrator",
  "module": "CRM",
  "name": "Quotation",
+ "naming_rule": "By \"Naming Series\" field",
  "owner": "Administrator",
  "permissions": [
   {
