@@ -1,0 +1,251 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "autoname": "CUSTOMER-.####",
+ "creation": "2026-08-25 18:18:57.199311",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "tab_break_glqc",
+  "customer_information_section",
+  "cname",
+  "email",
+  "number",
+  "source",
+  "address_section",
+  "al1",
+  "al2",
+  "city",
+  "state",
+  "country",
+  "pcode",
+  "tab_break_tswy",
+  "company_information_section",
+  "cpname",
+  "designation",
+  "industry",
+  "labor_count",
+  "tab_2_tab",
+  "crm_information_section",
+  "cstatus",
+  "csince",
+  "assigned_to",
+  "pr_contact",
+  "lc_date",
+  "nf_date",
+  "rend_date",
+  "reason",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "cname",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Customer Name",
+   "options": "Lead",
+   "reqd": 1
+  },
+  {
+   "fieldname": "customer_information_section",
+   "fieldtype": "Section Break",
+   "label": "Customer Information"
+  },
+  {
+   "fetch_from": "cname.email",
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email Address",
+   "options": "Email"
+  },
+  {
+   "fetch_from": "cname.phone",
+   "fieldname": "number",
+   "fieldtype": "Data",
+   "label": "Mobile Number",
+   "options": "Phone"
+  },
+  {
+   "fetch_from": "cname.source",
+   "fieldname": "source",
+   "fieldtype": "Data",
+   "label": "Lead Source"
+  },
+  {
+   "fieldname": "company_information_section",
+   "fieldtype": "Section Break",
+   "label": "Company information"
+  },
+  {
+   "fieldname": "cpname",
+   "fieldtype": "Data",
+   "label": "Company Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "designation",
+   "fieldtype": "Data",
+   "label": "Designation(Contact Person)",
+   "reqd": 1
+  },
+  {
+   "fieldname": "industry",
+   "fieldtype": "Data",
+   "label": "Industry"
+  },
+  {
+   "fieldname": "labor_count",
+   "fieldtype": "Data",
+   "label": "Labor Count"
+  },
+  {
+   "fieldname": "tab_break_glqc",
+   "fieldtype": "Tab Break",
+   "label": "Customer Details"
+  },
+  {
+   "fieldname": "tab_break_tswy",
+   "fieldtype": "Tab Break",
+   "label": "Company Details"
+  },
+  {
+   "fieldname": "tab_2_tab",
+   "fieldtype": "Tab Break",
+   "label": "CRM Details"
+  },
+  {
+   "fieldname": "address_section",
+   "fieldtype": "Section Break",
+   "label": "Address"
+  },
+  {
+   "fieldname": "al1",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Address Line 1",
+   "reqd": 1
+  },
+  {
+   "fieldname": "al2",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Address Line 2",
+   "reqd": 1
+  },
+  {
+   "fieldname": "city",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "City",
+   "reqd": 1
+  },
+  {
+   "fieldname": "state",
+   "fieldtype": "Data",
+   "label": "State",
+   "reqd": 1
+  },
+  {
+   "fieldname": "country",
+   "fieldtype": "Data",
+   "label": "Country",
+   "reqd": 1
+  },
+  {
+   "fieldname": "pcode",
+   "fieldtype": "Data",
+   "label": "Postal code",
+   "reqd": 1
+  },
+  {
+   "fieldname": "crm_information_section",
+   "fieldtype": "Section Break",
+   "label": "CRM Information"
+  },
+  {
+   "fieldname": "cstatus",
+   "fieldtype": "Select",
+   "label": "Customer Status",
+   "options": "In Relation\nLost Relation",
+   "reqd": 1
+  },
+  {
+   "fieldname": "csince",
+   "fieldtype": "Date",
+   "label": "Customer Since",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "cname.assigned_to",
+   "fieldname": "assigned_to",
+   "fieldtype": "Data",
+   "label": "Assigned To",
+   "reqd": 1
+  },
+  {
+   "fieldname": "pr_contact",
+   "fieldtype": "Select",
+   "label": "Preferred Contact Method",
+   "options": "Call\nEmail\nMeet"
+  },
+  {
+   "fieldname": "lc_date",
+   "fieldtype": "Date",
+   "label": "Last Contacted Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "nf_date",
+   "fieldtype": "Date",
+   "label": "Next Follow-up Date",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.cstatus==\"Lost Relation\"",
+   "fieldname": "rend_date",
+   "fieldtype": "Date",
+   "label": "Relationship End Date"
+  },
+  {
+   "depends_on": "eval:doc.cstatus==\"Lost Relation\"",
+   "fieldname": "reason",
+   "fieldtype": "Data",
+   "label": "Closure Reson"
+  },
+  {
+   "depends_on": "eval:doc.cstatus==\"Lost Relation\"",
+   "fieldname": "remarks",
+   "fieldtype": "Data",
+   "label": "Closure remarks"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-08-26 12:56:29.273525",
+ "modified_by": "Administrator",
+ "module": "CRM",
+ "name": "Customer",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}
