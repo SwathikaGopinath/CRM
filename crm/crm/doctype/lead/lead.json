@@ -7,19 +7,24 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "lead_information",
   "lead_name",
   "email",
-  "phone",
-  "organization",
   "source",
-  "status",
   "description",
-  "requirement",
-  "qualification_notes",
-  "qualification_date",
+  "column_break_xrif",
+  "organization",
+  "phone",
+  "status",
+  "follow_up",
   "assigned_to",
   "follow_up_date",
-  "next_action"
+  "next_action",
+  "qualification",
+  "requirement",
+  "qualification_notes",
+  "column_break_qjzi",
+  "qualification_date"
  ],
  "fields": [
   {
@@ -100,12 +105,35 @@
    "fieldname": "qualification_date",
    "fieldtype": "Date",
    "label": "Qualification Date"
+  },
+  {
+   "fieldname": "lead_information",
+   "fieldtype": "Section Break",
+   "label": "Lead Information"
+  },
+  {
+   "fieldname": "column_break_xrif",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "follow_up",
+   "fieldtype": "Section Break",
+   "label": "Follow up"
+  },
+  {
+   "fieldname": "qualification",
+   "fieldtype": "Section Break",
+   "label": "Qualification"
+  },
+  {
+   "fieldname": "column_break_qjzi",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-08-26 10:45:12.765431",
+ "modified": "2026-08-26 11:46:11.893621",
  "modified_by": "Administrator",
  "module": "CRM",
  "name": "Lead",
