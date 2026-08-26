@@ -10,29 +10,12 @@ from frappe.model.document import Document
 class SalesOrder(Document):
 
     def validate(self):
-        # self.validate_quotation()
+        
         self.validate_items()
         self.validate_dates()
         self.validate_status()
         self.calculate_totals()
-
-    # Quotation validation will be enabled after Person 5's
-    # Quotation DocType is merged into the development branch.
-    #
-    # def validate_quotation(self):
-    #     if not self.quotation:
-    #         frappe.throw("Quotation is required.")
-    #
-    #     quotation_status = frappe.db.get_value(
-    #         "Quotation",
-    #         self.quotation,
-    #         "status"
-    #     )
-    #
-    #     if quotation_status != "Accepted":
-    #         frappe.throw(
-    #             "Sales Order can only be created from an Accepted Quotation."
-    #         )
+    
 
     def validate_items(self):
         if not self.items:

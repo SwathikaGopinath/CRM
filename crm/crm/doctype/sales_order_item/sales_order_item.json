@@ -19,6 +19,7 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Item Name",
+   "options": "Quotation Item",
    "reqd": 1
   },
   {
@@ -53,7 +54,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2026-08-26 12:33:44.672366",
+ "modified": "2026-08-26 16:53:19.785357",
  "modified_by": "Administrator",
  "module": "CRM",
  "name": "Sales Order Item",

@@ -10,7 +10,6 @@
   "quotation",
   "order_date",
   "delivery_date",
-  "organization",
   "contact_person",
   "status",
   "items",
@@ -22,9 +21,10 @@
  "fields": [
   {
    "fieldname": "quotation",
-   "fieldtype": "Data",
+   "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Quotation",
+   "options": "Quotation",
    "reqd": 1
   },
   {
@@ -41,20 +41,16 @@
    "reqd": 1
   },
   {
-   "fieldname": "organization",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Organization"
-  },
-  {
    "fieldname": "contact_person",
-   "fieldtype": "Data",
-   "label": "Contact Person"
+   "fieldtype": "Link",
+   "label": "Contact Person",
+   "options": "Customer"
   },
   {
    "default": "Pending",
    "fieldname": "status",
    "fieldtype": "Select",
+   "in_list_view": 1,
    "label": "Status",
    "options": "Pending\nConfirmed\nIn Progress\nCompleted\nCancelled"
   },
@@ -92,7 +88,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-08-26 12:19:34.579554",
+ "modified": "2026-08-26 16:55:07.854933",
  "modified_by": "Administrator",
  "module": "CRM",
  "name": "Sales Order",
