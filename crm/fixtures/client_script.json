@@ -2,6 +2,17 @@
  {
   "docstatus": 0,
   "doctype": "Client Script",
+  "dt": "Opportunity",
+  "enabled": 1,
+  "modified": "2026-08-26 11:10:34.592925",
+  "module": "",
+  "name": "Probability",
+  "script": "frappe.ui.form.on(\"Opportunity\", {\r\n    validate(frm) {\r\n        if (frm.doc.opportunity_value < 0) {\r\n            frappe.throw(\"Opportunity Value cannot be negative.\");\r\n        }\r\n\r\n        if (\r\n            (frm.doc.probability || 0) < 0 ||\r\n            (frm.doc.probability || 0) > 100\r\n        ) {\r\n            frappe.throw(\"Probability must be between 0 and 100.\");\r\n        }\r\n\r\n        if (frm.doc.stage === \"Won\") {\r\n            frm.set_value(\"probability\", 100);\r\n        }\r\n\r\n        if (frm.doc.stage === \"Lost\") {\r\n            frm.set_value(\"probability\", 0);\r\n        }\r\n    },\r\n\r\n    stage(frm) {\r\n        const p = {\r\n            \"New\": 10,\r\n            \"Qualification\": 25,\r\n            \"Proposal\": 50,\r\n            \"Negotiation\": 75,\r\n            \"Won\": 100,\r\n            \"Lost\": 0\r\n        };\r\n\r\n        if (frm.doc.stage && p[frm.doc.stage] !== undefined) {\r\n            frm.set_value(\"probability\", p[frm.doc.stage]);\r\n        }\r\n    }\r\n});",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
   "dt": "Follow Up",
   "enabled": 1,
   "modified": "2026-08-25 17:23:42.183350",
