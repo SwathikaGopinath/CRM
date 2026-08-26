@@ -7,7 +7,7 @@ app_license = "mit"
 
 # Apps
 # ------------------
-fixtures = [{"dt": "Client Script", "filters": [["name", "=", "Opportunity Client Script"]]}]
+fixtures = [{"dt": "Client Script", "filters": [["name", "in", ["Probability", "Follow Up Script"]]]}]
 # required_apps = []
 
 # Each item in the list will be shown as an app in the apps page
@@ -23,7 +23,7 @@ fixtures = [{"dt": "Client Script", "filters": [["name", "=", "Opportunity Clien
 
 # Includes in <head>
 # ------------------
-fixtures = [{"dt": "Client Script", "filters": [["name", "=", "Follow Up Script"]]}]
+
 
 # include js, css files in header of desk.html
 # app_include_css = "/assets/crm/css/crm.css"
