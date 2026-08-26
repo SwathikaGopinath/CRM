@@ -42,8 +42,9 @@
   },
   {
    "fieldname": "customer",
-   "fieldtype": "Data",
+   "fieldtype": "Link",
    "label": "Contact Person",
+   "options": "Customer",
    "reqd": 1
   },
   {
@@ -93,7 +94,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-08-26 12:27:48.432101",
+ "modified": "2026-08-26 15:35:53.142180",
  "modified_by": "Administrator",
  "module": "CRM",
  "name": "Quotation",
