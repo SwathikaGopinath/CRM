@@ -29,11 +29,11 @@ frappe.ui.form.on("Sales Order", {
 		let today = frappe.datetime.get_today();
 
 		if (frm.doc.order_date < today) {
-			frappe.throw("Order Date cannot be in the past.");
+			frappe.throw(__("Order Date cannot be in the past."));
 		}
 
 		if (frm.doc.delivery_date < frm.doc.order_date) {
-			frappe.throw("Delivery Date cannot be before Order Date.");
+			frappe.throw(__("Delivery Date cannot be before Order Date."));
 		}
 
 		calculate_totals(frm);

@@ -16,7 +16,7 @@ class SalesOrder(Document):
 
 	def validate_items(self):
 		if not self.items:
-			frappe.throw("At least one sales order item is required.")
+			frappe.throw(_("At least one sales order item is required."))
 
 		for item in self.items:
 			if not item.qty or item.qty <= 0:
@@ -30,14 +30,14 @@ class SalesOrder(Document):
 	def validate_dates(self):
 		if self.delivery_date and self.order_date:
 			if self.delivery_date < self.order_date:
-				frappe.throw("Delivery Date cannot be earlier than Order Date.")
+				frappe.throw(_("Delivery Date cannot be earlier than Order Date."))
 
 	def validate_status(self):
 		if not self.status:
 			self.status = "Pending"
 
 		if self.is_new() and self.status != "Pending":
-			frappe.throw("New Sales Order must have Pending status.")
+			frappe.throw(_("New Sales Order must have Pending status."))
 
 	def calculate_totals(self):
 		subtotal = 0
